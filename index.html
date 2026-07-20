@@ -272,6 +272,27 @@
   .teaserquotes blockquote cite{display:block; margin-top:8px; font-style:normal; font-size:12.5px; color:var(--steel); font-weight:700; letter-spacing:0.04em;}
   @media (max-width:700px){ .ratingrow{grid-template-columns:1fr;} .ratingbig{border-right:none; border-bottom:1px solid var(--line); padding-right:0; padding-bottom:24px; flex-direction:row; align-items:baseline; gap:14px;} }
 
+  /* ---------- Newsletter ---------- */
+  .newsletter{background:var(--panel-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .newsgrid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;}
+  .newsgrid h2{font-size:clamp(30px,3.6vw,44px); color:var(--frost);}
+  .newsgrid p{color:var(--steel); margin-top:14px; font-size:15.5px; max-width:440px;}
+  .newsform{display:flex; flex-direction:column; gap:14px; background:var(--panel); border:1px solid var(--line); padding:32px;}
+  .newsform label{font-size:11.5px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--ice);}
+  .newsform input[type="email"], .newsform input[type="text"]{
+    width:100%; padding:13px 14px; background:var(--panel-2); border:1px solid var(--line); color:var(--frost);
+    font-family:'Manrope'; font-size:14.5px; border-radius:2px; outline:none; transition:border-color .2s;
+  }
+  .newsform input[type="email"]:focus, .newsform input[type="text"]:focus{border-color:var(--ice);}
+  .newsform button{
+    background:var(--ice); color:var(--ink); border:none; padding:14px 20px; font-weight:800;
+    font-size:13px; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; border-radius:2px; transition:background .2s;
+  }
+  .newsform button:hover{background:var(--frost);}
+  .newsform .fineprint{font-size:12px; color:var(--steel);}
+  /* honeypot field, hidden from real users */
+  .hp-field{position:absolute; left:-9999px; top:-9999px;}
+
   /* ---------- Footer ---------- */
   footer{padding:44px 0; background:var(--ink);}
   .footrow{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px;}
@@ -494,6 +515,41 @@
   </div>
 </section>
 
+<section class="newsletter" id="newsletter">
+  <div class="wrap newsgrid">
+    <div>
+      <div class="eyebrow">Newsletter</div>
+      <h2>Belt tips, schedule changes, and promos in your inbox.</h2>
+      <p>Join the pack list for testing dates, seasonal promotions, and the occasional training tip. No spam — a few emails a month, unsubscribe anytime.</p>
+    </div>
+
+    <!--
+      MAILCHIMP SETUP — read before publishing:
+      1. In Mailchimp: Audience > Signup forms > Embedded forms.
+      2. Copy the "action" URL from the generated <form> tag (looks like
+         https://xxxx.usXX.list-manage.com/subscribe/post?u=XXXXXXXXXX&id=YYYYYYYY&f_id=ZZZZZZZ)
+      3. Replace MAILCHIMP_FORM_ACTION_URL below with that exact URL.
+      4. Replace the two hidden "u" and "id" values below with the u= and id= values from that same URL.
+      5. Leave the honeypot field (name starting with "b_") exactly as-is — it blocks spam bots.
+    -->
+    <form action="MAILCHIMP_FORM_ACTION_URL" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="newsform" target="_blank" novalidate>
+      <label for="mce-FNAME">First Name</label>
+      <input type="text" name="FNAME" id="mce-FNAME" placeholder="Your first name">
+
+      <label for="mce-EMAIL">Email Address</label>
+      <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="you@email.com" required>
+
+      <!-- Honeypot field — required by Mailchimp to prevent bot signups. Do not remove or style visible. -->
+      <div class="hp-field" aria-hidden="true">
+        <input type="text" name="b_MAILCHIMP_U_VALUE_MAILCHIMP_ID_VALUE" tabindex="-1" value="">
+      </div>
+
+      <button type="submit" name="subscribe">Join the Pack List</button>
+      <div class="fineprint">We respect your inbox — no spam, ever.</div>
+    </form>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="sectionhead">
@@ -544,6 +600,7 @@
     <div class="footlinks">
       <a href="programs.html">Belt System</a>
       <a href="reviews.html">Reviews</a>
+      <a href="index.html#newsletter">Newsletter</a>
       <a href="https://www.google.com/maps?cid=16215222705460668783" target="_blank" rel="noopener">Google Profile ↗</a>
     </div>
     <div class="fine">&copy; <span id="year"></span> Wolf Pack Taekwondo Academy · 5743 Valley Way, Niagara Falls, ON</div>
