@@ -392,6 +392,43 @@
     .beltchip{width:44px; height:44px;}
     .agecards{grid-template-columns:1fr;}
   }
+
+  /* ---------- Gallery ---------- */
+  .gallery-section{padding-top:20px;}
+  .masonry{column-count:3; column-gap:18px;}
+  .masonry figure{
+    break-inside:avoid; margin:0 0 18px; position:relative; overflow:hidden;
+    border:1px solid var(--line); background:var(--panel); cursor:pointer;
+    border-radius:2px;
+  }
+  .masonry img{width:100%; display:block; transition:transform .35s ease, filter .35s ease;}
+  .masonry figure:hover img{transform:scale(1.045); filter:brightness(1.05);}
+  .masonry figcaption{
+    position:absolute; left:0; right:0; bottom:0; padding:14px 16px 12px;
+    background:linear-gradient(0deg, rgba(6,12,20,0.92), rgba(6,12,20,0));
+    font-size:12.5px; font-weight:700; letter-spacing:0.04em; color:var(--frost);
+    opacity:0; transform:translateY(6px); transition:opacity .25s ease, transform .25s ease;
+  }
+  .masonry figure:hover figcaption{opacity:1; transform:translateY(0);}
+  @media (max-width:900px){ .masonry{column-count:2;} }
+  @media (max-width:560px){ .masonry{column-count:1;} }
+
+  .lightbox{
+    position:fixed; inset:0; z-index:1000; background:rgba(6,10,16,0.94);
+    display:none; align-items:center; justify-content:center; padding:40px 24px;
+  }
+  .lightbox.active{display:flex;}
+  .lightbox img{max-width:min(92vw,1000px); max-height:86vh; border:1px solid var(--line); box-shadow:0 30px 70px -20px rgba(0,0,0,0.7);}
+  .lightbox-close{
+    position:absolute; top:28px; right:34px; width:44px; height:44px; border-radius:50%;
+    border:1px solid var(--line); background:rgba(255,255,255,0.04); color:var(--frost);
+    font-size:20px; display:flex; align-items:center; justify-content:center; cursor:pointer;
+  }
+  .lightbox-close:hover{border-color:var(--ice); color:var(--ice);}
+  .lightbox-cap{
+    position:absolute; bottom:34px; left:50%; transform:translateX(-50%);
+    font-size:13px; color:var(--steel); font-weight:600; letter-spacing:0.03em;
+  }
 </style>
 
 </head>
@@ -410,6 +447,7 @@
     <nav class="links">
       <a href="index.html#programs">Programs</a>
       <a href="programs.html">Belt System</a>
+      <a href="gallery.html">Gallery</a>
       <a href="index.html#schedule">Schedule</a>
       <a href="reviews.html">Reviews</a>
       <a href="index.html#trial">Free Trial</a>
@@ -565,6 +603,7 @@
     </div>
     <div class="footlinks">
       <a href="programs.html">Belt System</a>
+      <a href="gallery.html">Gallery</a>
       <a href="reviews.html">Reviews</a>
       <a href="index.html#newsletter">Newsletter</a>
       <a href="https://www.google.com/maps?cid=16215222705460668783" target="_blank" rel="noopener">Google Profile ↗</a>
