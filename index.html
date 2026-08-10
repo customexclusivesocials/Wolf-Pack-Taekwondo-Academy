@@ -377,6 +377,68 @@
   </div>
 </section>
 
+  <!-- ========================================== -->
+<!-- VIDEO SHOWCASE SECTION (PASTE AFTER HERO) -->
+<!-- ========================================== -->
+<section class="video-showcase-section">
+  <div class="video-showcase-container">
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline class="video-element">
+copy_8601ACEF-DEE5-4D26-B80B-F333837664D0.MOV
+        <source src="videos/taekwondo-loop.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Modular Video Showcase Styles */
+  .video-showcase-section {
+    width: 100%;
+    padding: 20px 24px 60px 24px; /* Padding creates spacing between hero and programs section */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+
+  .video-showcase-container {
+    width: 100%;
+    max-width: 1200px; /* Aligns smoothly with standard max site width */
+    margin: 0 auto;
+  }
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Enforces 16:9 landscape ratio */
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #0b1320;
+    /* Subtle border & shadow styled to match your dark theme */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+  }
+
+  .video-element {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures landscape video fills container cleanly */
+    display: block;
+  }
+
+  /* Responsive tweak for smaller mobile screens */
+  @media (max-width: 768px) {
+    .video-showcase-section {
+      padding: 10px 16px 40px 16px;
+    }
+    
+    .video-wrapper {
+      border-radius: 12px;
+    }
+  }
+</style>
+
 <section class="programs" id="programs">
   <div class="wrap">
     <div class="sectionhead">
