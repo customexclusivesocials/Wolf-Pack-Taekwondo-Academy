@@ -1,1 +1,14 @@
+.image-strip {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 8px; /* Gap between photos. Change to 0px for no gap at all */
+  overflow-x: auto; /* Allows horizontal scrolling on smaller screens if needed */
+}
 
+.image-strip img {
+  flex: 1; /* Makes all photos take equal width side-by-side */
+  height: 200px; /* Fixed height so all images match */
+  object-fit: cover; /* Crops nicely without stretching */
+  min-width: 0; /* Prevents overflow bugs in Flexbox */
+}
